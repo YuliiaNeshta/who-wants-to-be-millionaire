@@ -1,0 +1,36 @@
+@import '../../styles/color';
+@import '../../styles/breakpoints';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 100vh;
+  @media screen and (max-width: $tablet){
+    flex-direction: column;
+  }
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.close{
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+}

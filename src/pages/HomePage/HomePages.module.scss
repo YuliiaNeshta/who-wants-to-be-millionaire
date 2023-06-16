@@ -1,0 +1,45 @@
+@import "../../styles/color";
+@import "../../styles/breakpoints";
+
+.title{
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 1.6em;
+  display: flex;
+  align-items: center;
+  color: $text-color;
+  margin-bottom: 4rem;
+  @media screen and (max-width: $tablet){
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  @media screen and (max-width: $mobile){
+    font-size: 2rem;
+    flex: 1 1 auto;
+  }
+}
+
+.content{
+  max-width: 39rem;
+  width: 100%;
+  @media screen and (max-width: $tablet){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+}
+
+.wrapper{
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #fff 0%, #fff 50%, $accent04 50%, $accent04 100%);
+  @media screen and (max-width: $tablet){
+    flex-direction: column;
+  }
+}

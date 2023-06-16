@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the color of the White House?",
+      "answers": ["Pink", "Blue", "White", "Rainbow"],
+      "correctAnswers": ["White"],
+      "money": 500
+    },
+    {
+      "id": 2,
+      "question": "How many legs does a spider typically have?",
+      "answers": ["100", "2", "8", "4"],
+      "correctAnswers": ["8"],
+      "money": 1000
+    },
+    {
+      "id": 3,
+      "question": "What do you call a group of crows?",
+      "answers": ["A flock", "A murder", "A gaggle", "A herd"],
+      "correctAnswers": ["A murder"],
+      "money": 2000
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Australia?",
+      "answers": ["Sydney", "Melbourne", "Brisbane", "Canberra"],
+      "correctAnswers": ["Canberra"],
+      "money": 4000
+    },
+    {
+      "id": 5,
+      "question": "What is the world's largest ocean?",
+      "answers": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "correctAnswers": ["Pacific"],
+      "money": 8000
+    },
+    {
+      "id": 6,
+      "question": "Who wrote the 'Game of Thrones' series of books?",
+      "answers": ["J.K. Rowling", "George R. R. Martin", "Stephen King", "Suzanne Collins"],
+      "correctAnswers": ["George R. R. Martin"],
+      "money": 16000
+    },
+    {
+      "id": 7,
+      "question": "What is the square root of 144?",
+      "answers": ["12", "14", "16", "18"],
+      "correctAnswers": ["12"],
+      "money": 32000
+    },
+    {
+      "id": 8,
+      "question": "Which planet is known as the 'Red Planet'?",
+      "answers": ["Venus", "Mars", "Jupiter", "Saturn"],
+      "correctAnswers": ["Mars"],
+      "money": 64000
+    },
+    {
+      "id": 9,
+      "question": "What is the chemical symbol for gold?",
+      "answers": ["Gd", "Go", "Au", "Ag"],
+      "correctAnswers": ["Au"],
+      "money": 125000
+    },
+    {
+      "id": 10,
+      "question": "Who painted the Mona Lisa?",
+      "answers": ["Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+      "correctAnswers": ["Leonardo da Vinci"],
+      "money": 250000
+    },
+    {
+      "id": 11,
+      "question": "What is the name of the longest river in the world?",
+      "answers": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+      "correctAnswers": ["Nile"],
+      "money": 500000
+    },
+    {
+      "id": 12,
+      "question": "Who was the first person to walk on the moon?",
+      "answers": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Michael Collins"],
+      "correctAnswers": ["Neil Armstrong"],
+      "money": 1000000
+    }
+  ]
+}

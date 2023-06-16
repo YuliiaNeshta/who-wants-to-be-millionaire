@@ -1,0 +1,33 @@
+@import '../../styles/color';
+@import '../../styles/breakpoints';
+
+.scores {
+  background-color: #ffffff;
+  max-width: 23.5rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+  @media screen and (max-width: $tablet){
+    position: fixed;
+    inset: 0;
+    max-width: none;
+    background-color: $fill02;
+    transform: translateY(-100%);
+  }
+  &.show{
+    @media screen and (max-width: $tablet) {
+      transform: translateY(0);
+    }
+  }
+  &.hide{
+    @media screen and (max-width: $tablet) {
+      transform: translateY(-100%);
+    }
+  }
+}
