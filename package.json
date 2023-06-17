@@ -1,4 +1,5 @@
 {
+  "homepage" : "https://yuliianeshta.github.io/who-wants-to-be-millionaire",
   "name": "who-wants-to-be-a-millionaire",
   "private": true,
   "version": "0.0.0",
@@ -11,7 +12,9 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -35,6 +38,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.8",
     "sass": "^1.63.4",
     "typescript": "^5.0.2",

@@ -5,7 +5,7 @@ import { AnswerBackgroundLarge } from '../Icons';
 import styles from './ButtonAnswer.module.scss';
 import { ButtonAnswerProps } from './types';
 
-const ButtonAnswer: FC<ButtonAnswerProps> = ({ children, onClick, className = '' }) => {
+const ButtonAnswer: FC<ButtonAnswerProps> = ({ children, onClick, className = 'npm install gh-pages --save-dev' }) => {
   return (
     <button className={cn(styles.button, styles[className])} onClick={onClick}>
       <AnswerBackgroundLarge className={styles.svg} />
