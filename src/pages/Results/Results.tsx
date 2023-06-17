@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import hand from '../../assests/images/hand.svg';
+import Button from '../../components/Button';
+import { resetCurrentQuestionIndex, resetScore } from '../../store/reducers.ts';
 import { RootState } from '../../store/store.ts';
 import styles from './Results.module.scss';
-import { resetScore, resetCurrentQuestionIndex } from '../../store/reducers.ts';
 
 const EndGame: FC = () => {
   const score = useSelector((state: RootState) => state.quiz.score);
@@ -21,9 +21,9 @@ const EndGame: FC = () => {
       <div className={styles.result}>
         <p className={styles.totalText}>Total score:</p>
         <p className={styles.score}>${score} earned</p>
-        <Link onClick={handleRestart} to="/">
+        <Button isLink onClick={handleRestart} linkPath="/">
           Try again
-        </Link>
+        </Button>
       </div>
     </div>
   );

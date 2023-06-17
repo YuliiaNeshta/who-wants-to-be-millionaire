@@ -1,5 +1,5 @@
-@import "../../styles/color";
-@import "../../styles/breakpoints";
+@import '../../styles/color';
+@import '../../styles/breakpoints';
 
 .button {
   display: flex;
@@ -15,8 +15,9 @@
   @media screen and (max-width: $mobile) {
     height: 2rem;
   }
-  &::before, &::after{
-    content: "";
+  &::before,
+  &::after {
+    content: '';
     position: absolute;
     top: 50%;
     left: -50%;
@@ -27,28 +28,29 @@
     background-color: #d0d0d8;
     transition: background-color 0.2s ease;
   }
-  &::after{
+  &::after {
     left: auto;
     right: -50%;
   }
   &.active {
     color: $accent02;
-    & .text{
+    & .text {
       color: $accent02;
     }
-    &::before, &::after{
+    &::before,
+    &::after {
       background-color: $accent02;
     }
   }
   &.pastScore {
     color: $fill;
-    & .text{
+    & .text {
       color: $fill;
     }
   }
 }
 
-.text{
+.text {
   position: absolute;
   z-index: 3;
   color: $text-color;
@@ -61,20 +63,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: color 0.2s ease;
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     font-size: 0.875rem;
   }
 }
 
-.svg{
+.svg {
   position: relative;
   z-index: 2;
   width: 100%;
-  @media screen and (max-width:$tablet){
+  @media screen and (max-width: $tablet) {
     height: 2rem;
   }
-  & path{
+  & path {
     transition: all 0.4s ease;
   }
 }
-

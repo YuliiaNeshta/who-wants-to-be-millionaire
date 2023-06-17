@@ -1,7 +1,7 @@
-@import "../../styles/color";
-@import "../../styles/breakpoints";
+@import '../../styles/color';
+@import '../../styles/breakpoints';
 
-.wrapper{
+.wrapper {
   height: 100vh;
   background-color: $fill02;
   display: flex;
@@ -13,7 +13,7 @@
   }
 }
 
-.result{
+.result {
   max-width: 39rem;
   width: 100%;
   @media screen and (max-width: $tablet) {
@@ -25,14 +25,14 @@
   }
 }
 
-.totalText{
+.totalText {
   font-weight: 600;
   font-size: 2rem;
   line-height: 116%;
   color: $text-color;
   opacity: 0.5;
   margin-bottom: 0.5rem;
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     font-size: 1.5rem;
   }
   @media screen and (max-width: $mobile) {
@@ -40,13 +40,13 @@
   }
 }
 
-.score{
+.score {
   font-weight: 600;
   font-size: 3.5rem;
   line-height: 116%;
   color: $text-color;
   margin-bottom: 4rem;
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     font-size: 2.8rem;
     margin-bottom: 2rem;
   }

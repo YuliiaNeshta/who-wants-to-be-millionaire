@@ -1,7 +1,7 @@
-@import "../../styles/color";
-@import "../../styles/breakpoints";
+@import '../../styles/color';
+@import '../../styles/breakpoints';
 
-.button{
+.button {
   text-decoration: none;
   height: 4rem;
   padding-inline: 1rem;
@@ -17,18 +17,15 @@
   font-size: 1.25rem;
   line-height: 116%;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: $accent02;
   transition: background-color 0.5s ease;
-  @media screen and (max-width: $mobile){
+  @media screen and (max-width: $mobile) {
     height: 3rem;
     font-size: 0.875rem;
     border-radius: 0.5rem;
   }
-  &:hover{
+  &:hover {
     background-color: $accent03;
   }
 }
-
-
-

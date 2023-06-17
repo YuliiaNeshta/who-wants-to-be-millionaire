@@ -1,5 +1,5 @@
-@import "../../styles/color";
-@import "../../styles/breakpoints";
+@import '../../styles/color';
+@import '../../styles/breakpoints';
 
 .title {
   font-weight: 600;
@@ -42,7 +42,7 @@
   line-height: 116%;
   color: $accent02;
   margin-right: 0.5rem;
-  @media screen and (max-width: $tablet){
+  @media screen and (max-width: $tablet) {
     font-size: 0.875rem;
   }
 }
@@ -62,7 +62,7 @@
   }
 }
 
-.quizInner{
+.quizInner {
   height: 100%;
   display: flex;
   flex-direction: column;

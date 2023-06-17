@@ -1,5 +1,5 @@
-@import "../../styles/color";
-@import "../../styles/breakpoints";
+@import '../../styles/color';
+@import '../../styles/breakpoints';
 
 .button {
   display: flex;
@@ -15,49 +15,49 @@
   @media screen and (max-width: $tablet) {
     font-size: 0.875rem;
   }
-  @media screen and (max-width: $mobile){
+  @media screen and (max-width: $mobile) {
     height: 3.5rem;
   }
   &:hover {
     color: $accent02;
   }
   &.success {
-    & .svg{
+    & .svg {
       color: $success;
-      & path{
+      & path {
         fill: $success02;
       }
     }
   }
   &.error {
-    & .svg{
+    & .svg {
       color: $danger;
-      & path{
+      & path {
         fill: $danger02;
       }
     }
   }
 }
 
-.text{
+.text {
   position: absolute;
   left: 3rem;
   top: 1.6rem;
   color: $text-color;
   display: flex;
   align-items: center;
-  @media screen and (max-width:$mobile){
+  @media screen and (max-width: $mobile) {
     left: 2.5rem;
     top: 1.1rem;
   }
 }
 
-.svg{
+.svg {
   width: 100%;
-  @media screen and (max-width:$tablet){
+  @media screen and (max-width: $tablet) {
     height: 3.5rem;
   }
-  & path{
+  & path {
     transition: all 0.4s ease;
   }
 }
