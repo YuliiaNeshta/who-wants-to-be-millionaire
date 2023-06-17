@@ -1,12 +1,13 @@
-@import "../../style/color";
-@import "../../style/breakpoints";
+@import "../../styles/color";
+@import "../../styles/breakpoints";
 
 .button{
+  text-decoration: none;
   height: 4rem;
   padding-inline: 1rem;
   border-radius: 0.75rem;
   white-space: nowrap;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -26,9 +27,6 @@
   }
   &:hover{
     background-color: $accent03;
-  }
-  &:active, &:visited{
-    background-color: $accent;
   }
 }
 

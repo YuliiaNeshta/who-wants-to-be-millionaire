@@ -7,28 +7,26 @@ import ButtonScore from '../ButtonScore';
 
 import styles from './ScoreBoard.module.scss';
 import data from '../../services/data.json';
+import { ScoreBoardProps } from './types.ts';
 
-const ScoreBoard: FC = () => {
-  const score = useSelector((state: RootState) => state.quiz.score);
-
-  console.log(score);
+const ScoreBoard: FC<ScoreBoardProps> = ({ className = '' }) => {
+  const { currentQuestionIndex } = useSelector((state: RootState) => state.quiz);
 
   const moneyArray = data.questions.map(question => question.money);
 
   return (
-    <div className={cn(styles.scores)}>
+    <div className={cn(styles.scores, styles[className])}>
       {moneyArray
         .map((amount, idx) => {
           return (
             <ButtonScore
               className={cn(styles.score, {
-                ['active']: amount === score,
-                ['pastScore']: amount < score,
+                ['active']: currentQuestionIndex === idx,
+                ['pastScore']: currentQuestionIndex > idx,
               })}
               key={idx}
             >
               ${amount}
-              {score}
             </ButtonScore>
           );
         })

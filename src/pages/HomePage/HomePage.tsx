@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 import hand from '../../assests/images/hand.svg';
+import Button from '../../components/Button';
 import styles from './HomePages.module.scss';
 
 const HomePage: FC = () => {
@@ -11,7 +11,9 @@ const HomePage: FC = () => {
       </div>
       <div className={styles.content}>
         <h1 className={styles.title}>Who wants to be a&nbsp;millionaire?</h1>
-        <Link to="/question/1">Start Quiz</Link>
+        <Button isLink linkPath="/question/1">
+          Start Quiz
+        </Button>
       </div>
     </div>
   );

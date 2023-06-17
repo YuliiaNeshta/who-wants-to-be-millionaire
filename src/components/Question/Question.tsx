@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import data from '../../services/data.json';
@@ -19,47 +19,71 @@ interface Question {
 
 const Question: FC = () => {
   const [selectedOption, setSelectedOption] = useState<string>('');
+  const [showNextQuestion, setShowNextQuestion] = useState(false);
+
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
-  const question: Question | undefined = data.questions.find((q: Question) => q.id === parseInt(id!));
+
+  const question: Question | undefined = data.questions.find(q => q.id === Number(id));
 
   const handleOptionSelect = (option: string): void => {
     setSelectedOption(option);
-    const isCorrect: boolean | undefined = question && question.correctAnswers.includes(option);
-    if (isCorrect && question && question.id < data.questions.length) {
+
+    if (!question) return;
+
+    console.log(selectedOption);
+
+    const isCorrect = question?.correctAnswers.includes(option);
+
+    if (isCorrect && question.id === data.questions.length) {
+      dispatch(increaseScore(question.money));
+      navigate('/results');
+    } else if (isCorrect && question.id < data.questions.length) {
       dispatch(increaseScore(question.money));
       dispatch(increaseCurrentQuestionIndex());
-      navigate(`/question/${question.id + 1}`);
+      setShowNextQuestion(true);
     } else {
       navigate('/results');
     }
   };
 
-  if (!data) return null;
+  useEffect(() => {
+    if (!question) return;
+
+    if (showNextQuestion) {
+      const timeout = setTimeout(() => {
+        setShowNextQuestion(false);
+        navigate(`/question/${question.id + 1}`);
+      }, 4000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [showNextQuestion, question?.id, navigate]);
+
+  if (!question) return null;
 
   return (
-    <div>
-      {question && (
-        <>
-          <h2 className={styles.title}>Question {question.id}</h2>
-          <h3 className={styles.title}>{question.question}</h3>
-          <div className={styles.answers}>
-            {question.answers.map((option: string, idx: number) => (
-              <ButtonAnswer
-                key={option}
-                className={cn(styles.button, option === selectedOption ? styles.selected : '')}
-                onClick={() => handleOptionSelect(option)}
-              >
-                <span className={styles.letter}>{LETTERS[idx]}</span>
-                {option}
-              </ButtonAnswer>
-            ))}
-          </div>
-          <Link to="/">Go to Home</Link>
-        </>
-      )}
+    <div className={styles.questions}>
+      <div className={styles.quizInner}>
+        <h2 className={styles.title}>{question.question}</h2>
+        <div className={styles.answers}>
+          {question.answers.map((option, idx) => (
+            <ButtonAnswer
+              key={option}
+              className={cn(styles.button, {
+                [styles.success]: option === selectedOption,
+                [styles.error]: option !== selectedOption,
+              })}
+              onClick={() => handleOptionSelect(option)}
+            >
+              <span className={styles.letter}>{LETTERS[idx]}</span>
+              {option}
+            </ButtonAnswer>
+          ))}
+        </div>
+        <Link to="/">Go to Home</Link>
+      </div>
     </div>
   );
 };
